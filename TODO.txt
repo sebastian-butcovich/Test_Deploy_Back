@@ -1,0 +1,23 @@
+DONE:
+Ver tema refresh token -OK-
+Paginado en queries -OK-
+Agregar ultimo logueo usuario -OK-
+Modificar monto a rango -OK-
+Pasar tipo a tabla -no tiene sentido-
+Ver imagen, carga, limite, si es base64 -descartado, uso str-
+Configurar endpoint get solo para traer min max -OK, se establecieron multiples parametros-
+Agregar en todas las tablas un isVisible del monto -descartado-
+Agregado obtener list distinct de tipos ingreso/gasto -OK-
+Ajustar monto que tenga 2 decimales -OK-
+arreglar pagina 1 de 0 -OK-
+arreglar peticiones vacias en agregar -OK-
+conversion a dolar/euro en el get de ingresos/gastos (microservicio) -OK-
+promedio, total, cantidad semanal/mensual de ingresos/gastos -OK-
+Mejorar implementacion conversion a dolar/euro (muchas requests en lista) -OK-
+Implementacion feedback -OK-
+
+TODO:
+OAuth2
+Verificar cuenta
+investigar microservicio de imagenes
+Lista de ingresos/gastos totales/promedios separados, ver eficiencia en apidolar
