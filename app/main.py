@@ -4,7 +4,6 @@ import jwt
 from flask import Flask, request, jsonify, g
 from flask_cors import CORS, cross_origin
 
-from app.db import db
 from app.db_config import db_config
 from app import config as cfg
 
