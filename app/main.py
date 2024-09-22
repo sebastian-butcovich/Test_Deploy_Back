@@ -4,6 +4,12 @@ import jwt
 from flask import Flask, request, jsonify, g
 from flask_cors import CORS, cross_origin
 
+from app.db import db
+from app.db_config import db_config
+from app import config as cfg
+
+from app.models.usuarios import Usuario
+from flask_migrate import Migrate
 
 # Agregar los cambios de modelos a db: "flask db migrate"
 # Commitear los cambios de modelos a db: "flask db upgrade"
