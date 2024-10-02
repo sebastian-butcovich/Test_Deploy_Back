@@ -32,8 +32,24 @@ def deploy_app() :
 
     migrate = Migrate(app, db)
 
+    @app.route("/about")
+    @cross_origin()
+    # @login_required
+    def about():
+        return "QmFja2VuZCBkZSBhcHAgZGUgZmluYW56YXMuIERlc2Fycm9sbGFkbyBwb3IgQnJhaWFuIEdhcmF0LiAyMDI0"
 
-    def token_required(f):
+
+    @app.route("/health")
+    @cross_origin()
+    # @login_required
+    def health():
+        return jsonify({
+            'health': 'ok'
+        }), 200
+    return app;
+app = deploy_app()
+
+def token_required(f):
         @wraps(f)
         def decorated(*args, **kwargs):
             token = None
@@ -56,24 +72,6 @@ def deploy_app() :
             return f(*args, **kwargs)
 
         return decorated
-
-
-    @app.route("/about")
-    @cross_origin()
-    # @login_required
-    def about():
-        return "QmFja2VuZCBkZSBhcHAgZGUgZmluYW56YXMuIERlc2Fycm9sbGFkbyBwb3IgQnJhaWFuIEdhcmF0LiAyMDI0"
-
-
-    @app.route("/health")
-    @cross_origin()
-    # @login_required
-    def health():
-        return jsonify({
-            'health': 'ok'
-        }), 200
-    return app;
-app = deploy_app()
 
 from app.controllers import auth, usuarios, ingresos, gastos, feedback
 app.register_blueprint(auth.bp)
